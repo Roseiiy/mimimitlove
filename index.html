@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffcce0;
+      font-family: 'Quicksand', sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #container, #envelopeContainer, #letterContainer, #finalMessage, #flowerContainer {
+      display: none;
+    }
+
+    #greeting {
+      font-size: 20px;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    button {
+      background-color: #e06666;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #f08080;
+    }
+
+    .letter {
+      max-width: 600px;
+      padding: 30px;
+      border: 1px solid #e06666;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 200px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    #finalNote {
+      font-size: 18px;
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    #flowerContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #flowerText {
+      font-size: 20px;
+      color: #d44d4d;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="bgMusic" src="mymusic.mp3" loop></audio>
+
+  <!-- Step 1: Greeting -->
+  <div id="greeting">
+    <p>Hello my loveee 💖 How's your day?</p>
+    <p>Open this... I have a little surprise for you.</p>
+    <button onclick="startSurprise()">Yes 🥺</button>
+  </div>
+
+  <!-- Step 2: Envelope -->
+  <div id="envelopeContainer">
+    <p>Tap the envelope to open your message ✉️</p>
+    <img src="envelope.png.jpeg" alt="Envelope" onclick="showLetter()">
+  </div>
+
+  <!-- Step 3: Letter -->
+  <div id="letterContainer">
+    <div class="letter">
+      <p>I just want to say how truly thankful I am for you.</p>
+      <p>For every good thing you've done for me — for taking care of me, for loving me so completely, and for being patient even on the days I struggle to love myself.</p>
+      <p>You deserve this flower — not just any flower, but one full of love, warmth, and everything beautiful, just like your soul.</p>
+      <p>You are my safe place. My home. And in every choice you make, please know that I am — and always will be — your first and biggest supporter.</p>
+      <p>Here's a flower that will never wither, just like my love for you.</p>
+      <p>Thank you for making love feel like peace. Thank you for existing.</p>
+      <p>Forever yours, <br/>LOVE 🌸</p>
+    </div>
+    <button onclick="goNext()">Do you want to go next?</button>
+  </div>
+
+  <!-- Step 4: Final Message -->
+  <div id="finalMessage">
+    <div id="finalNote">
+      Whenever you feel tired or unsure, come back here. <br/>
+      This is your reminder that you're deeply loved. — LOVE
+    </div>
+    <div id="flowerContainer">
+      <img src="sunflower.png.jpeg" alt="Sunflower">
+      <div id="flowerText">Here is the flower for you, my love 🌻</div>
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+
+    function startSurprise() {
+      document.getElementById("greeting").style.display = "none";
+      document.getElementById("envelopeContainer").style.display = "flex";
+      music.play();
+    }
+
+    function showLetter() {
+      document.getElementById("envelopeContainer").style.display = "none";
+      document.getElementById("letterContainer").style.display = "flex";
+    }
+
+    function goNext() {
+      document.getElementById("letterContainer").style.display = "none";
+      document.getElementById("finalMessage").style.display = "flex";
+      document.getElementById("flowerContainer").style.display = "flex";
+    }
+  </script>
+
+</body>
+</html>
